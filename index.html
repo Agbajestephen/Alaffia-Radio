@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alaffia Daily Reset</title>
+    <link rel="icon" type="image/png" href="Alaffia logo.png">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img src="Alaffia logo.png" alt="Alaffia Media" width="150" />
+    <h2>Gbedu for de Soul</h2>
+    <p id="date-label">Loading today's audio...</p>
+
+    <div class="player-container">
+      <audio id="daily-audio" controls>
+        <source id="audio-source" src="" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    
+
+    <div>
+      <a
+        href=" https://whatsapp.com/channel/0029Vb6w1StLI8YbzE0Y2W3J"
+        class="whatsapp-btn"
+        target="_blank"
+      >
+        Join the Alaffia WhatsApp Community
+      </a>
+    </div>
+
+    <script>
+      // Get the current date (1 through 31)
+      const today = new Date();
+      const dateOfMonth = today.getDate();
+
+      // Helper function to add the correct suffix (st, nd, rd, th)
+      function getOrdinalSuffix(i) {
+        let j = i % 10,
+          k = i % 100;
+        if (j == 1 && k != 11) return i + "st";
+        if (j == 2 && k != 12) return i + "nd";
+        if (j == 3 && k != 13) return i + "rd";
+        return i + "th";
+      }
+
+      // Update the text on the screen
+      document.getElementById("date-label").innerText =
+        "Your fire for the " + getOrdinalSuffix(dateOfMonth) + ".";
+
+      // Load the correct audio file (e.g., '1.mp3') from the Hostinger '/audio' folder
+      const audioPlayer = document.getElementById("daily-audio");
+      const audioSource = document.getElementById("audio-source");
+
+      audioSource.src = "audio/" + dateOfMonth + ".mp3";
+      audioPlayer.load(); // Forces the player to load the new file
+    </script>
+  </body>
+</html>
