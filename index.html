@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alaffia Daily Reset</title>
-    <link rel="icon" type="image/png" href="Alaffia logo.png">
+    <link rel="icon" type="image/png" href="Alaffia logo.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -18,7 +18,6 @@
         Your browser does not support the audio element.
       </audio>
     </div>
-    
 
     <div>
       <a
@@ -31,6 +30,31 @@
     </div>
 
     <script>
+      // // Get the current date (1 through 31)
+      // const today = new Date();
+      // const dateOfMonth = today.getDate();
+
+      // // Helper function to add the correct suffix (st, nd, rd, th)
+      // function getOrdinalSuffix(i) {
+      //   let j = i % 10,
+      //     k = i % 100;
+      //   if (j == 1 && k != 11) return i + "st";
+      //   if (j == 2 && k != 12) return i + "nd";
+      //   if (j == 3 && k != 13) return i + "rd";
+      //   return i + "th";
+      // }
+
+      // // Update the text on the screen
+      // document.getElementById("date-label").innerText =
+      //   "Your fire for the " + getOrdinalSuffix(dateOfMonth) + ".";
+
+      // // Load the correct audio file (e.g., '1.mp3') from the Hostinger '/audio' folder
+      // const audioPlayer = document.getElementById("daily-audio");
+      // const audioSource = document.getElementById("audio-source");
+
+      // audioSource.src = "audio/" + dateOfMonth + ".mp3";
+      // audioPlayer.load(); // Forces the player to load the new file
+
       // Get the current date (1 through 31)
       const today = new Date();
       const dateOfMonth = today.getDate();
@@ -49,12 +73,17 @@
       document.getElementById("date-label").innerText =
         "Your fire for the " + getOrdinalSuffix(dateOfMonth) + ".";
 
-      // Load the correct audio file (e.g., '1.mp3') from the Hostinger '/audio' folder
+      // Only 3 files ready — loop through them until all 31 are uploaded
+      const availableFiles = ["12", "13", "14"]; // update these to match your actual filenames
+      const fileIndex = (dateOfMonth - 1) % availableFiles.length;
+      const selectedFile = availableFiles[fileIndex];
+
+      // Load the correct audio file
       const audioPlayer = document.getElementById("daily-audio");
       const audioSource = document.getElementById("audio-source");
 
-      audioSource.src = "audio/" + dateOfMonth + ".mp3";
-      audioPlayer.load(); // Forces the player to load the new file
+      audioSource.src = "audio/" + selectedFile + ".mp3";
+      audioPlayer.load();
     </script>
   </body>
 </html>
