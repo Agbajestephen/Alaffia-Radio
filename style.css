@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --peach: #f2c4b0;
+  --blush: #f5ddd0;
+  --cream: #faf0e8;
+  --brown: #8b4513;
+  --brown-dim: #a0522d;
+  --dark: #1a1a1a;
+  --surface: rgba(255, 255, 255, 0.3);
+  --border: rgba(139, 69, 19, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #f2c4b0 0%, #f5ddd0 50%, #faf0e8 100%);
+  background-attachment: fixed;
+  color: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+img {
+  width: 280px;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 12px;
+  image-rendering: high-quality;
+  filter: none;
+}
+
+h2 {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  max-width: 320px;
+  margin: 0 auto 8px auto;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+#date-label {
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brown);
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.player-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 32px;
+  margin-bottom: 36px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(139, 69, 19, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+audio {
+  width: 100%;
+  accent-color: var(--brown);
+  filter: none;
+}
+
+.whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+  .player-container {
+    padding: 18px 20px;
+  }
+  .whatsapp-btn {
+    min-height: 48px;
+    width: 100%;
+    justify-content: center;
+  }
+  img {
+    width: 180px;
+  }
+}
+
